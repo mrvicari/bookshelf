@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="foreGround">
+  <h1>{{ current_user.usernameDB }}'s Books</h1>
+</div>
+
+{% for book in Books %}
+
+<hr>
+
+<div class="foreGround">
+  <div class="row">
+    <div class="col-xs-10">
+      <p class="title"> {{ book.bookTitle }} </p>
+    </div>
+    <div class="col-xs-2 right">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <a href="/editBook/{{book.id}}" class="btn btn-info">Edit</a>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <a href="/removeBook/{{book.id}}" class="btn btn-danger"><strong>X</strong></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p><strong>Rating: </strong>{{ book.bookRating }}/5</p>
+  <p><strong>Lists: </strong>
+    {% for list in book.lists %}
+      <a href="/{{list.id}}">{{ list.listTitle }}</a>
+    {% endfor %}
+  </p>
+</div>
+
+{% endfor %}
+
+{% endblock %}

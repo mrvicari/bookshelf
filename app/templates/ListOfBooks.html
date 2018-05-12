@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="foreGround">
+  <h1>{{ listTitle }}</h1>
+</div>
+
+{% for book in Books %}
+
+<hr>
+
+<div class="foreGround">
+  <p class="title"> {{ book.bookTitle }} </p>
+  <p><strong>Rating: </strong>{{ book.bookRating }}/5</p>
+</div>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="foreGround">
+  <h1>Edit List</h1>
+</div>
+
+<hr>
+
+<div class="foreGround">
+  {% with messages = get_flashed_messages() %}
+   {% if messages %}
+     {% for message in messages %}
+       <p class="formError"> {{ message }} </p>
+     {% endfor %}
+  {% endif %}
+{% endwith %}
+<form method="post" name="addTask">
+    <h3>List Title</h3>
+    {{ form.hidden_tag() }}
+    {% for error in form.listTitle.errors %}
+      <p class="formError">{{ error }}</p>
+    {% endfor %}
+    <p>{{ form.listTitle(class_="form-control") }}</p>
+    <h3>List Description</h3>
+    <p>{{ form.listDescription(class_="form-control") }}</p>
+    <h3>Books to Remove</h3>
+    <p>{{ form.booksToRemove(class_="form-control") }}</p>
+    <br>
+    <div class="center">
+      <input class="btn btn-primary" type="submit" value="Sumbit">
+    </div>
+</form>
+</div>
+
+{% endblock %}

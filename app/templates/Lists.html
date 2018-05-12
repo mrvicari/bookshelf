@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="foreGround">
+  <h1>{{ current_user.usernameDB }}'s Lists</h1>
+</div>
+
+{% for list in Lists %}
+
+<hr>
+
+<a href="/{{list.id}}" class="listLink">
+<div class="foreGround">
+  <div class="row">
+    <div class="col-xs-10">
+      <p class="title"> {{ list.listTitle }} </p>
+    </div>
+    <div class="col-xs-2 right">
+      <div class="row">
+        <div class="col-xs-6">
+          <a href="/editList/{{list.id}}" class="btn btn-info">Edit</a>        
+        </div>
+        <div class="col-xs-6">
+          <a href="removeList/{{list.id}}" class="btn btn-danger" ><strong>X</strong></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p> {{ list.listDescription }} </p>
+</div>
+</a>
+
+{% endfor %}
+
+{% endblock %}

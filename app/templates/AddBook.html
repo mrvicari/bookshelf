@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="foreGround">
+  <h1>{{ title }}</h1>
+</div>
+
+<hr>
+
+<div class="foreGround">
+  {% with messages = get_flashed_messages() %}
+   {% if messages %}
+     {% for message in messages %}
+       <p class="formError"> {{ message }} </p>
+     {% endfor %}
+  {% endif %}
+{% endwith %}
+<form method="post" name="addBook">
+    <h3>Book Title</h3>
+    {{ form.hidden_tag() }}
+    {% for error in form.bookTitle.errors %}
+      <p class="formError">{{ error }}</p>
+    {% endfor %}
+    <p>{{ form.bookTitle(class_="form-control") }}</p>
+    <h3>Book Rating</h3>
+    {% for error in form.bookRating.errors %}
+      <p class="formError">{{ error }}</p>
+    {% endfor %}
+    <p>{{ form.bookRating }}</p>
+    <h3>List</h3>
+    {{ form.addBookToList(class_="form-control") }}
+    <br>
+    <div class="center">
+      <input class="btn btn-primary" type="submit" value="Add">
+    </div>
+</form>
+</div>
+
+{% endblock %}

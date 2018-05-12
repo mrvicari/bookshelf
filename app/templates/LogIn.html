@@ -1,0 +1,42 @@
+{% extends "noNavIndex.html" %}
+{% block content %}
+
+<div class="row">
+<div class="col-xs-8 col-xs-offset-2">
+
+<div class="foreGround">
+  <h1>Log In</h1>
+</div>
+
+<hr>
+
+<div class="foreGround">
+  {% with messages = get_flashed_messages() %}
+   {% if messages %}
+     {% for message in messages %}
+       <p class="formError"> {{ message }} </p>
+     {% endfor %}
+  {% endif %}
+{% endwith %}
+  <form method="post" name="logIn">
+    <h3>Username</h3>
+    {{ form.hidden_tag() }}
+    <p>{{ form.username(class_="form-control") }}</p>
+    <h3>Password</h3>
+    <p>{{ form.password(class_="form-control") }}</p>
+    <br>
+    <div class="center">
+      <input class="btn btn-primary btn-block" type="submit" value="Log In">
+    </div>
+  </form>
+  <br>
+  <div class="center">
+    <a href="/register">Register</a>
+  </div>
+  <br>
+</div>
+
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+/* Text Styling */
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  font-family: serif;
+  font-weight: bold;
+}
+
+p.title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+p.formError {
+  font-size: 16px;
+  color: red;
+  text-align: center;
+}
+
+/* Background and Foreground Styling */
+
+.foreGround {
+  background-color: ivory;
+  padding: 1%;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+body {
+  background-color: darkgrey;
+}
+
+a.listLink {
+  text-decoration: none;
+  color: currentColor;
+}
+
+/* Miscellaneous */
+
+div.center {
+  text-align: center;
+}
+
+div.right {
+  text-align: right;
+}
+
+div.left {
+  text-align: left;
+}
+
+textarea {
+  min-height: 200px;
+  max-width: 100%
+}
+
+ul#bookRating{
+  list-style-type: none;
+  padding: 0 0 0 15px;
+  margin: 0 40px 0 0;
+}

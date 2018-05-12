@@ -1,0 +1,79 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="foreGround">
+  <h1>Help</h1>
+</div>
+
+<hr>
+
+<div class="foreGround">
+  <p class="title">About</p>
+  <p>
+    This website allows users to create a virtual bookshelf. It works on the basis of allowing the user to add or remove books and categorise them into custom lists.
+  </p>
+</div>
+
+<hr>
+
+<div class="foreGround">
+  <p class="title">Adding Books</p>
+  <p>
+    Adding books is very simple. A link to the appropriate page is provided in the navigation bar, this s page contains a form asking for the book title, a rating given by the user and a choice of lists to which the book should be added. Books can be added to a minimum of 0 lists, meaning that they do not have to be in any list if desired.
+  </p>
+</div>
+
+<hr>
+
+<div class="foreGround">
+  <p class="title">Editing Books</p>
+  <p>
+    In order to edit a specifc book, the user must navigate to the 'books' page (link in navigation bar) and click the 'edit' button of the specific book. This will bring up the same form used to add the book in the first place. The form works in the same way for the title, rating and list.
+  </p>
+  <p>
+    *If List is left empty, the book will be removed from all lists
+  </p>
+</div>
+
+<hr>
+
+<div class="foreGround">
+  <p class="title">Removing Books</p>
+  <p>
+    If the user desires to completely remove a book, they must navigate to the 'books' page and click the red X button in the specific book's card
+  </p>
+</div>
+
+<hr>
+
+<div class="foreGround">
+  <p class="title">Adding Lists</p>
+  <p>
+    Adding lists is very simple. A link to the appropriate page is provided in the navigation bar, this s page contains a form asking for the list title, and an optional description.
+  </p>
+</div>
+
+<hr>
+
+<div class="foreGround">
+  <p class="title">Editing Lists</p>
+  <p>
+    In order to edit a specifc list, the user must navigate to the 'lists' page (link in navigation bar) and click the 'edit' button of the specific list. This will bring up a similar form to the one used to add the list in the first place. The form works in the same way for the title and description. However, it adds the possibility to remove specific book from that list, not from the overall database.
+  </p>
+  <p>
+    *If Books to Remove is left empty, no books will be removed
+  </p>
+</div>
+
+<hr>
+
+<div class="foreGround">
+  <p class="title">Removing Lists</p>
+  <p>
+    If the user desires to completely remove a list, they must navigate to the 'lists' page and click the red X button in the specific list's card
+  </p>
+</div>
+
+<br>
+
+{% endblock %}
